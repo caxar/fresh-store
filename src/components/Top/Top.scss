@@ -1,0 +1,25 @@
+@import "../../css-config/colors.scss";
+
+.top {
+  padding: 20px 0;
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__city {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    &__nav {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      &-item {
+        a {
+          color: $gray-1;
+        }
+      }
+    }
+  }
+}

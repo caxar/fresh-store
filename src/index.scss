@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import "./css-config/mixins.scss";
+@import "./css-config/colors.scss";
 
 * {
   margin: 0;
@@ -12,7 +13,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   line-height: 22px;
-  color: #101014;
+  color: $gray-1;
   font-family: "Open Sans", sans-serif;
   width: 100%;
 }
@@ -48,5 +49,4 @@ li {
 
 a {
   text-decoration: none;
-  color: #333;
 }
