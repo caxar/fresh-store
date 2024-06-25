@@ -1,7 +1,7 @@
 @import "../../css-config/colors.scss";
 
 .top {
-  padding: 20px 0;
+  padding: 10px 0 20px 0;
   &-wrapper {
     display: flex;
     align-items: center;
@@ -14,10 +14,24 @@
     &__nav {
       display: flex;
       align-items: center;
-      gap: 40px;
+      gap: 10px;
       &-item {
+        padding: 10px;
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
         a {
           color: $gray-1;
+        }
+        &:hover {
+          background: $gray-3;
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -ms-border-radius: 10px;
+          -o-border-radius: 10px;
         }
       }
     }

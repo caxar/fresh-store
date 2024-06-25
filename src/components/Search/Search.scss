@@ -1,0 +1,33 @@
+@import "../../css-config/colors.scss";
+
+.search {
+  background: $white;
+  display: flex;
+  align-items: center;
+  padding: 15px 15px 15px 25px;
+  gap: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  width: 300px;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+  -webkit-transition: border 0.3s ease;
+  -moz-transition: border 0.3s ease;
+  -ms-transition: border 0.3s ease;
+  -o-transition: border 0.3s ease;
+  &:hover {
+    border: 2px solid $green-3;
+  }
+  input[type="text"] {
+    background: transparent;
+    border: none;
+    height: 100%;
+    width: 100%;
+    color: $gray-1;
+    outline: none;
+    font-size: 15px;
+  }
+}
