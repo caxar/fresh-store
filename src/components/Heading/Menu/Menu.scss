@@ -4,22 +4,31 @@
   position: absolute;
   background: $gray-3;
   top: 120px;
-  width: 80%;
+  width: 100%;
   right: 50px;
-  transform: translateX(-50px);
-  -webkit-transform: translateX(-50px);
-  -moz-transform: translateX(-50px);
-  -ms-transform: translateX(-50px);
-  -o-transform: translateX(-50px);
+  transform: translateX(50px);
+  -webkit-transform: translateX(50px);
+  -moz-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  -o-transform: translateX(50px);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  // padding: 20px 0;
+  //padding: 20px 0;
   max-height: calc(100vh - 80px);
   height: 500px;
-  // height: 200px;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  -webkit-transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 2s ease-in-out;
+  -ms-transition: opacity 2s ease-in-out;
+  -o-transition: opacity 2s ease-in-out;
+  &.active-show {
+    opacity: 1;
+  }
+  //height: 200px;
   &__categories {
     width: 320px;
     overflow: auto;
@@ -32,8 +41,26 @@
         font-size: 17px;
         font-weight: 600;
         padding: 20px 10px 20px 30px;
-        background: $white;
-        color: $green-3;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        svg {
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+          -webkit-transition: opacity 0.3s ease-in-out;
+          -moz-transition: opacity 0.3s ease-in-out;
+          -ms-transition: opacity 0.3s ease-in-out;
+          -o-transition: opacity 0.3s ease-in-out;
+        }
+        &.active {
+          background: $white;
+          color: $green-3;
+          svg {
+            opacity: 1;
+          }
+        }
       }
       &-content {
         position: absolute;
@@ -45,7 +72,10 @@
         width: calc(100% - 312px);
         right: 0;
         overflow: auto;
-        display: block;
+        display: none;
+        &.is-active {
+          display: block;
+        }
       }
       &-wrapper {
         column-count: 3;

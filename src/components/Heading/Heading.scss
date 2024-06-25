@@ -66,14 +66,25 @@
     &__icons {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 20px;
       &-item {
         position: relative;
         cursor: pointer;
+        width: 40px;
+        height: 40px;
+        background: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
         .count {
           position: absolute;
-          top: -15px;
-          right: -15px;
+          top: -6px;
+          right: -10px;
           color: #fff;
           width: 20px;
           height: 20px;

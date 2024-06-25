@@ -4,13 +4,19 @@ import Search from "../Search";
 import Menu from "./Menu";
 
 const Heading = () => {
+  const [showMenu, setShowMenu] = React.useState<boolean>(false);
+
+  const handleClickMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
     <div className="heading">
       <div className="heading-wrapper">
         <div className="heading-wrapper__main">
           <div className="heading-wrapper__catalog">
             <div className="logo">FRESH</div>
-            <div className="catalog-btn">
+            <div onClick={() => handleClickMenu()} className="catalog-btn">
               <svg
                 width="30px"
                 height="30px"
@@ -117,7 +123,7 @@ const Heading = () => {
         </div>
       </div>
       <div className="menu-block">
-        <Menu />
+        {showMenu && <Menu showMenu={showMenu} />}
       </div>
     </div>
   );
