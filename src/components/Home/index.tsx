@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.scss";
 import Top from "../Top";
 import Heading from "../Heading";
+import Slider from "../Slider";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <div className="container">
         <Top />
         <Heading />
+        <Slider />
       </div>
     </div>
   );

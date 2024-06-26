@@ -25,6 +25,7 @@
   -moz-transition: opacity 2s ease-in-out;
   -ms-transition: opacity 2s ease-in-out;
   -o-transition: opacity 2s ease-in-out;
+  z-index: 10;
   &.active-show {
     opacity: 1;
   }

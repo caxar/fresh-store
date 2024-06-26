@@ -1,0 +1,59 @@
+@import "../../css-config/colors.scss";
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 190px;
+  padding: 18px 10px 18px 30px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border: none;
+  background: $green-3;
+  color: $white;
+  font-weight: 500;
+  font-size: 16px;
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    span {
+      svg {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+      }
+    }
+  }
+  span {
+    background: $green-2;
+    right: 5px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    svg {
+      transition: transform 0.3s ease;
+      transform: rotate(-30deg);
+      -webkit-transform: rotate(-30deg);
+      -moz-transform: rotate(-30deg);
+      -ms-transform: rotate(-30deg);
+      -o-transform: rotate(-30deg);
+      -webkit-transition: transform 0.3s ease;
+      -moz-transition: transform 0.3s ease;
+      -ms-transition: transform 0.3s ease;
+      -o-transition: transform 0.3s ease;
+    }
+  }
+}
