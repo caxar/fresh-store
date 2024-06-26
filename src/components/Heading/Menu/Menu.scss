@@ -20,11 +20,7 @@
   max-height: calc(100vh - 80px);
   height: 500px;
   opacity: 0;
-  transition: opacity 2s ease-in-out;
-  -webkit-transition: opacity 2s ease-in-out;
-  -moz-transition: opacity 2s ease-in-out;
-  -ms-transition: opacity 2s ease-in-out;
-  -o-transition: opacity 2s ease-in-out;
+  animation: fadeIn 0.2s ease-in-out;
   z-index: 10;
   &.active-show {
     opacity: 1;
@@ -106,5 +102,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
