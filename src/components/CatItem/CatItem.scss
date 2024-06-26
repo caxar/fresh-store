@@ -9,11 +9,14 @@
     justify-content: space-between;
     margin-bottom: 40px;
     .title {
-      font-size: 50px;
+      font-size: 45px;
       color: $black;
+      font-weight: 500;
     }
     .subtitle {
-      width: 230px;
+      width: 270px;
+      text-wrap: balance;
+      font-weight: 500;
     }
   }
   .cat-slide {

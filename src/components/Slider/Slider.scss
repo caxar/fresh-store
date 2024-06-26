@@ -87,12 +87,16 @@
     }
   }
   &-title {
-    font-size: 50px;
+    font-size: 45px;
     line-height: 55px;
     color: $black;
+    font-weight: 500;
     span {
       color: $green-3;
     }
+  }
+  &-subtitle {
+    font-weight: 500;
   }
   &-over__content {
     position: absolute;
@@ -103,7 +107,7 @@
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    padding: 20px 15px;
+    padding: 20px 25px;
     bottom: 40px;
     right: 30px;
     display: flex;
@@ -111,16 +115,18 @@
     align-items: flex-start;
     gap: 16px;
     .title {
-      font-size: 22px;
+      font-size: 20px;
       color: $black;
       text-align: left;
+      font-weight: 500;
       span {
         font-weight: 600;
       }
     }
     .subtitle {
       text-align: left;
-      //   font-size: 16px;
+      font-size: 15px;
+      font-weight: 500;
     }
     .link {
       display: flex;
