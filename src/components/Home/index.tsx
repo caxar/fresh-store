@@ -4,6 +4,7 @@ import Top from "../Top";
 import Heading from "../Heading";
 import Slider from "../Slider";
 import CatItem from "../CatItem";
+import Popular from "../Popular";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         <Heading />
         <Slider />
         <CatItem />
+        <Popular />
       </div>
     </div>
   );
