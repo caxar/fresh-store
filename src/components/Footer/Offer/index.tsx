@@ -19,14 +19,16 @@ const Offer = () => {
   ];
   return (
     <div className="offer">
-      <div className="offer-wrrapper">
-        <ul className="offer-nav">
-          {offerData?.map((item) => (
-            <li className="offren-nav__item">
-              <a href="">{item.title}</a>
-            </li>
-          ))}
-        </ul>
+      <div className="container">
+        <div className="offer-wrrapper">
+          <ul className="offer-nav">
+            {offerData?.map((item) => (
+              <li className="offren-nav__item">
+                <a href="">{item.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

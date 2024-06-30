@@ -15,6 +15,7 @@
     "react-dom": "^18.3.1",
     "react-router": "^6.24.0",
     "react-router-dom": "^6.24.0",
+    "react-scroll": "^1.9.0",
     "sass": "^1.77.6",
     "swiper": "^11.1.4"
   },

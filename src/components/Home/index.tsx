@@ -9,23 +9,38 @@ import Values from "../Values";
 import Cooperation from "../Cooperation";
 import Footer from "../Footer";
 import Offer from "../Footer/Offer";
+import ScrollBtn from "../ScrollBtn";
 
 const Home = () => {
+  const [scrollingBtn, setScrollingBtn] = React.useState<boolean>(false);
+
+  const handleScrollingBtn = () => {
+    const offsetTop = window.scrollY;
+    if (offsetTop > 400) {
+      setScrollingBtn(true);
+    } else {
+      setScrollingBtn(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScrollingBtn);
+  }, []);
+
   return (
     <div className="home">
-      <div className="container">
-        <Top />
-        <Heading />
-        <Slider />
-        <CatItem />
-        <Popular />
-        <Values />
-        <CatItem />
-        <Cooperation />
-        <CatItem />
-        <Footer />
-        <Offer />
-      </div>
+      <Top />
+      <Heading />
+      <Slider />
+      <CatItem />
+      <Popular />
+      <Values />
+      <CatItem />
+      <Cooperation />
+      <CatItem />
+      <ScrollBtn scrollingBtn={scrollingBtn} />
+      <Footer />
+      <Offer />
     </div>
   );
 };

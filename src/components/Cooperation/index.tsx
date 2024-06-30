@@ -31,25 +31,28 @@ const Cooperation = () => {
 
   return (
     <div className="cooperation">
-      <div className="cooperation-wrapper">
-        <div className="title">
-          <span>FRESH</span> - объединяет <span>местных производителей,</span> у
-          которых есть страсть к свежим и <span>качественным продуктам</span> с
-          миссией <span>заботы о мире</span> и вашем здоровье
+      <div className="container">
+        <div className="cooperation-wrapper">
+          <div className="title">
+            <span>FRESH</span> - объединяет <span>местных производителей,</span>{" "}
+            у которых есть страсть к свежим и{" "}
+            <span>качественным продуктам</span> с миссией{" "}
+            <span>заботы о мире</span> и вашем здоровье
+          </div>
+          <div className="year">
+            2018 - <span>2024</span>
+          </div>
+          <ul className="food-nav">
+            {cloudWord?.map((item) => (
+              <li className="food-nav__item" style={{ background: item.bg }}>
+                {item.title}
+              </li>
+            ))}
+          </ul>
+          <img className="cooperation-left" src={cooperationLeft} alt="" />
+          <img className="cooperation-right" src={cooperationRight} alt="" />
         </div>
-        <div className="year">
-          2018 - <span>2024</span>
-        </div>
-        <ul className="food-nav">
-          {cloudWord?.map((item) => (
-            <li className="food-nav__item" style={{ background: item.bg }}>
-              {item.title}
-            </li>
-          ))}
-        </ul>
       </div>
-      <img className="cooperation-left" src={cooperationLeft} alt="" />
-      <img className="cooperation-right" src={cooperationRight} alt="" />
     </div>
   );
 };

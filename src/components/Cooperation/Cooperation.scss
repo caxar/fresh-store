@@ -1,22 +1,22 @@
 @import "../../css-config/colors.scss";
 
 .cooperation {
-  position: relative;
   margin-bottom: 80px;
-  background: $gray-3;
-  height: 550px;
   display: flex;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  overflow: hidden;
   &-wrapper {
+    position: relative;
+    background: $gray-3;
+    height: 550px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
     .title {
       width: 70%;
       text-align: center;

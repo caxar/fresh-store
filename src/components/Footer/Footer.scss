@@ -2,19 +2,19 @@
 
 .footer {
   margin-top: 200px;
-  position: relative;
-  background: $gray-3;
-  height: 300px;
   margin-bottom: 20px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
   &-wrapper {
     display: flex;
     justify-content: space-between;
+    position: relative;
     padding: 80px 50px;
+    background: $gray-3;
+    height: 300px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
     &__left {
       display: flex;
       align-items: center;
@@ -46,7 +46,7 @@
       width: 60%;
       img {
         width: 50%;
-        right: 0;
+        right: 0px;
         bottom: -70px;
         position: absolute;
         transform: scale(-1, 1);

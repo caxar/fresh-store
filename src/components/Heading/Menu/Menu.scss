@@ -1,16 +1,16 @@
 @import "../../../css-config/colors.scss";
 
 .heading-menu {
-  position: absolute;
+  //position: absolute;
   background: $gray-3;
   top: 120px;
   width: 100%;
   right: 50px;
-  transform: translateX(50px);
-  -webkit-transform: translateX(50px);
-  -moz-transform: translateX(50px);
-  -ms-transform: translateX(50px);
-  -o-transform: translateX(50px);
+  transform: translateY(10px);
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  -o-transform: translateY(10px);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;

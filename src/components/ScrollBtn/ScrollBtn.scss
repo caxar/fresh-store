@@ -1,0 +1,39 @@
+@import "../../css-config/colors.scss";
+
+.scroll-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 55px;
+  position: fixed;
+  right: 30px;
+  bottom: 80px;
+  background: $green-3;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  opacity: 0;
+  &.is-active {
+    animation: BtnScrollingAnimation 0.3s ease forwards;
+    opacity: 1;
+    -webkit-animation: BtnScrollingAnimation 0.3s ease forwards;
+  }
+  &:hover {
+    box-shadow: 0 0 0 11px rgb(45, 189, 98, 0.3);
+  }
+}
+
+@keyframes BtnScrollingAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
