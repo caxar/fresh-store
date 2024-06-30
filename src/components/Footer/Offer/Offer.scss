@@ -1,0 +1,20 @@
+@import "../../../css-config/colors.scss";
+
+.offer {
+  &-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    li {
+      &:hover {
+        a {
+          color: $green-3;
+        }
+      }
+    }
+    a {
+      color: $gray-1;
+      font-size: 15px;
+    }
+  }
+}
