@@ -5,6 +5,9 @@ import Heading from "../Heading";
 import Slider from "../Slider";
 import CatItem from "../CatItem";
 import Popular from "../Popular";
+import Values from "../Values";
+import Cooperation from "../Cooperation";
+import Footer from "../Footer";
 
 const Home = () => {
   return (
@@ -15,6 +18,11 @@ const Home = () => {
         <Slider />
         <CatItem />
         <Popular />
+        <Values />
+        <CatItem />
+        <Cooperation />
+        <CatItem />
+        <Footer />
       </div>
     </div>
   );

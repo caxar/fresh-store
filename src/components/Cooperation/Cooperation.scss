@@ -1,0 +1,67 @@
+@import "../../css-config/colors.scss";
+
+.cooperation {
+  position: relative;
+  margin-bottom: 80px;
+  background: $gray-3;
+  height: 550px;
+  display: flex;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  overflow: hidden;
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .title {
+      width: 70%;
+      text-align: center;
+      font-size: 35px;
+      line-height: 40px;
+      //   text-wrap: balance;
+      color: #000;
+      font-weight: 500;
+      margin-bottom: 30px;
+      span {
+        color: $green-3;
+      }
+    }
+    .year {
+      font-size: 45px;
+      font-weight: 600;
+      color: $black;
+      margin-bottom: 60px;
+      span {
+        color: $green-3;
+      }
+    }
+  }
+  &-left {
+    position: absolute;
+    left: -30px;
+    bottom: 0;
+  }
+  &-right {
+    position: absolute;
+    right: -30px;
+    bottom: 20px;
+  }
+  .food-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &__item {
+      padding: 10px 15px;
+      color: $white;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+    }
+  }
+}

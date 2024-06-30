@@ -2,7 +2,7 @@
 
 .popular {
   //   height: 600px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   &-text {
     width: 60%;
     display: flex;
@@ -26,6 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
     &__left {
       width: 40%;
       .title {
@@ -34,6 +35,7 @@
         text-wrap: balance;
         color: #000;
         font-weight: 500;
+        margin-bottom: 100px;
         span {
           color: $green-3;
         }
@@ -49,6 +51,95 @@
           -moz-border-radius: 10px;
           -ms-border-radius: 10px;
           -o-border-radius: 10px;
+        }
+      }
+      .swiper-slide {
+        position: relative;
+        &:hover {
+          .slide-text {
+            &__btn {
+              svg {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+              }
+            }
+          }
+        }
+        .slide-text {
+          position: absolute;
+          bottom: 30px;
+          left: 10px;
+          transform: translateX(20px);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          -webkit-transform: translateX(20px);
+          -moz-transform: translateX(20px);
+          -ms-transform: translateX(20px);
+          -o-transform: translateX(20px);
+          cursor: pointer;
+          span {
+            font-size: 20px;
+            text-wrap: balance;
+            width: 65%;
+            color: $white;
+          }
+          &__btn {
+            background: $white;
+            right: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 40px;
+            border-radius: 30px;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            -ms-border-radius: 30px;
+            -o-border-radius: 30px;
+            svg {
+              transition: transform 0.3s ease;
+              transform: rotate(-45deg);
+              -webkit-transform: rotate(-45deg);
+              -moz-transform: rotate(-45deg);
+              -ms-transform: rotate(-45deg);
+              -o-transform: rotate(-45deg);
+              -webkit-transition: transform 0.3s ease;
+              -moz-transition: transform 0.3s ease;
+              -ms-transition: transform 0.3s ease;
+              -o-transition: transform 0.3s ease;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-buttons {
+    display: flex;
+    gap: 20px;
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #179c49;
+      width: 50px;
+      height: 50px;
+      border-radius: 30px;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      -ms-border-radius: 30px;
+      -o-border-radius: 30px;
+      cursor: pointer;
+      &:last-child {
+        svg {
+          transform: rotate(180deg);
+          -webkit-transform: rotate(180deg);
+          -moz-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          -o-transform: rotate(180deg);
         }
       }
     }
