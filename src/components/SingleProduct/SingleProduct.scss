@@ -1,1 +1,113 @@
 @import "../../css-config/colors.scss";
+
+.single-product {
+  &__wrapper {
+    display: flex;
+    // gap: 40px;
+  }
+  &__slider {
+    position: sticky;
+    position: -webkit-sticky; /* for Safari */
+    position: sticky;
+    top: 0;
+    align-self: flex-start; /* <-- this is the fix */
+    width: 55%;
+  }
+  &__text {
+    margin-top: 40px;
+    .title {
+      font-size: 40px;
+      line-height: 55px;
+      color: #000;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .rating {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    .description {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 30px;
+      h3 {
+        color: $black;
+        margin-bottom: 10px;
+      }
+      &-first {
+      }
+      &-second {
+      }
+      &-third {
+      }
+    }
+    .properties {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      &-btn {
+        background: $green-3;
+        width: 150px;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        color: $white;
+        justify-content: center;
+        border-radius: 30px;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        -ms-border-radius: 30px;
+        -o-border-radius: 30px;
+        margin-bottom: 30px;
+      }
+      h3 {
+        color: $black;
+        margin-bottom: 15px;
+      }
+      .specifications {
+        &-nav {
+          &__item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            .item-title {
+            }
+            .item-value {
+              font-size: 17px;
+              font-weight: 600;
+              color: $black;
+            }
+          }
+        }
+      }
+      .nutritional {
+        &-wrapper {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          &__left {
+            width: 45%;
+          }
+          &__right {
+            width: 45%;
+          }
+        }
+        &-item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          .item-value {
+            font-size: 17px;
+            font-weight: 600;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}

@@ -15,7 +15,7 @@ const Heading = () => {
 
   const handleScrollHeading = () => {
     const offsetTop = window.scrollY;
-    if (offsetTop > 100) {
+    if (offsetTop > 300) {
       setScrollHeading(true);
     } else {
       setScrollHeading(false);

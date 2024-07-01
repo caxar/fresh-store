@@ -1,0 +1,39 @@
+@import "../../../css-config/colors.scss";
+
+.single-swiper {
+  .swiper {
+    width: 90%;
+  }
+  .swiper img {
+    width: 95%;
+    vertical-align: bottom;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .swiper-thumbs {
+    cursor: pointer;
+  }
+  .swiper-slide-thumb-active {
+    border: 2px solid $green-3;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  &__thumb {
+    .swiper-slide {
+      margin-right: 10px;
+      img {
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
