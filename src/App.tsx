@@ -6,6 +6,7 @@ import Top from "./components/Top";
 import Footer from "./components/Footer";
 import Offer from "./components/Footer/Offer";
 import SingleProduct from "./components/SingleProduct";
+import ErrorSite from "./components/404";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="cart" element={<Cart />} />
         <Route path="/goods/:id" element={<SingleProduct />} />
+        <Route path="/*" element={<ErrorSite />} />
       </Routes>
       <Footer />
       <Offer />
