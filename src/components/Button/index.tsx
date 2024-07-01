@@ -3,7 +3,12 @@ import "./Button.scss";
 
 const Button = ({ children, ...attributes }) => {
   return (
-    <button type="button" {...attributes}>
+    <a
+      href={attributes.link}
+      type="button"
+      {...attributes}
+      className="main-button"
+    >
       {children}
       <span>
         <svg
@@ -21,7 +26,7 @@ const Button = ({ children, ...attributes }) => {
           ></path>
         </svg>
       </span>
-    </button>
+    </a>
   );
 };
 

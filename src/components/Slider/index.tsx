@@ -28,7 +28,7 @@ const Slider = () => {
               Сотрудничаем с производителями вашего региона, <br />
               доставляем натуральные и свежие продукты
             </div>
-            <Button>Каталог</Button>
+            <Button link="catalog">Каталог</Button>
           </div>
           <div className="slider-wrapper__sliders">
             <Swiper

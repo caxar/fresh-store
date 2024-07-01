@@ -29,8 +29,8 @@ const Home = () => {
 
   return (
     <div className="home">
-      <Top />
-      <Heading />
+      {/* <Top />
+      <Heading /> */}
       <Slider />
       <CatItem />
       <Popular />
@@ -39,8 +39,8 @@ const Home = () => {
       <Cooperation />
       <CatItem />
       <ScrollBtn scrollingBtn={scrollingBtn} />
-      <Footer />
-      <Offer />
+      {/* <Footer />
+      <Offer /> */}
     </div>
   );
 };

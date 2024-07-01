@@ -1,0 +1,23 @@
+@import "../../css-config/colors.scss";
+
+.cart {
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    &__img {
+    }
+    &__text {
+      font-size: 40px;
+      width: 450px;
+      line-height: 45px;
+      color: $black;
+    }
+  }
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
