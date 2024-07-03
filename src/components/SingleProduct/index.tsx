@@ -6,6 +6,8 @@ import SingleBg from "../../assets/single-bg.png";
 
 import "./SingleProduct.scss";
 import ProductCarousel from "./ProductCarousel";
+import CatItem from "../CatItem";
+import RecipeItem from "../RecipeItem";
 
 const SingleProduct = () => {
   const location = useLocation();
@@ -148,6 +150,10 @@ const SingleProduct = () => {
             </div>
           </div>
         </div>
+
+        <CatItem />
+
+        <RecipeItem />
       </div>
     </div>
   );
