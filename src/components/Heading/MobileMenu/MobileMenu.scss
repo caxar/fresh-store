@@ -20,18 +20,63 @@
     transition: all 0.3s ease;
   }
   .mobile-content {
-    width: 50%;
+    width: 40%;
     height: 100%;
     background: #fff;
     position: relative;
     z-index: 40;
     display: flex;
+    padding: 20px 50px 30px 20px;
     flex-direction: column;
     transform: translateX(100%);
     animation: showMenuMobile 0.3s ease forwards;
     &.showmenu {
       transform: translateX(0%);
       animation: showMenuMobile 0.3s ease forwards;
+    }
+    &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 30px;
+      .logo {
+        font-size: 25px;
+        font-weight: 600;
+        color: $green-3;
+      }
+    }
+    .mobile-nav {
+      &__adv {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background: $green-light;
+        padding: 0px 20px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        margin-bottom: 20px;
+        span {
+          font-size: 18px;
+          font-weight: 600;
+          color: $black;
+        }
+        img {
+          width: 30%;
+        }
+      }
+      &__item {
+        margin-bottom: 20px;
+        a {
+          color: $black;
+          font-weight: 600;
+          //   font-size: 17px;
+        }
+      }
     }
   }
 }
