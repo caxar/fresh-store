@@ -19,7 +19,7 @@ const ErrorSite = () => {
             Возможно такой странице не существует.Вы можете воспользоваться
             каталогом
           </div>
-          <Button link="catalog">Каталог</Button>
+          <Button link="/goods">Каталог</Button>
         </div>
       </div>
     </div>

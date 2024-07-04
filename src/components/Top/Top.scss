@@ -1,4 +1,5 @@
 @import "../../css-config/colors.scss";
+@import "../../css-config/mixins.scss";
 
 .top {
   padding: 10px 0 0px 0;
@@ -35,5 +36,11 @@
         }
       }
     }
+  }
+}
+
+@include xl {
+  .top {
+    display: none;
   }
 }

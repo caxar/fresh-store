@@ -1,4 +1,5 @@
 @import "../../css-config/colors.scss";
+@import "../../css-config/mixins.scss";
 
 .heading {
   position: relative;
@@ -98,6 +99,19 @@
           }
         }
       }
+      .mobile-icon {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: $green-3;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+      }
     }
     &__search {
       display: flex;
@@ -168,9 +182,34 @@
       }
     }
   }
-  // .menu-block {
-  //   position: relative;
-  // }
+}
+
+@include xl {
+  .heading {
+    &-wrapper {
+      &__main {
+        width: 100%;
+      }
+      &__icons {
+        display: none;
+      }
+      &__search {
+        display: none;
+      }
+      &__catalog {
+        .catalog-btn {
+          display: none;
+        }
+        .mobile-icon {
+          display: flex;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+  }
 }
 
 @keyframes stickyHeaderAnimation {

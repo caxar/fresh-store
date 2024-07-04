@@ -17,7 +17,7 @@ const Cart = () => {
             <div className="cart-wrapper__text">
               Корзина ждёт, пока её наполнят
             </div>
-            <Button link="catalog">За покупками</Button>
+            <Button link="/goods">За покупками</Button>
           </div>
         </div>
       </div>
