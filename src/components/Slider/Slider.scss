@@ -1,4 +1,5 @@
 @import "../../css-config/colors.scss";
+@import "../../css-config/mixins.scss";
 
 .slider {
   &-wrapper {
@@ -158,6 +159,31 @@
           -ms-transform: rotate(-45deg);
           -o-transform: rotate(-45deg);
         }
+      }
+    }
+  }
+}
+
+@include xl {
+  .slider-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    &__info {
+      padding: 30px;
+    }
+    &__sliders {
+      height: 50px;
+    }
+  }
+}
+@include md {
+  .slider-wrapper {
+    &__info {
+      .slider-title {
+        font-size: 35px;
+        line-height: 40px;
+      }
+      .main-button {
+        width: 100%;
       }
     }
   }

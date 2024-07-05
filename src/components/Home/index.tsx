@@ -10,6 +10,7 @@ import Cooperation from "../Cooperation";
 import Footer from "../Footer";
 import Offer from "../Footer/Offer";
 import ScrollBtn from "../ScrollBtn";
+import BottomNavigation from "../BottomNavigation";
 
 const Home = () => {
   const [scrollingBtn, setScrollingBtn] = React.useState<boolean>(false);
@@ -39,6 +40,7 @@ const Home = () => {
       <Cooperation />
       <CatItem />
       <ScrollBtn scrollingBtn={scrollingBtn} />
+      <BottomNavigation />
       {/* <Footer />
       <Offer /> */}
     </div>

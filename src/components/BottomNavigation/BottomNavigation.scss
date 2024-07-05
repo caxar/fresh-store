@@ -1,0 +1,38 @@
+@import "../../css-config/colors.scss";
+@import "../../css-config/mixins.scss";
+
+.bottom-menu {
+  display: none;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 0;
+  left: 0;
+  background: $white;
+  border-top: 1px solid #ebebeb;
+  z-index: 40;
+  width: 100%;
+  padding: 5px 0;
+  .bottom-nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@include xl {
+  .bottom-menu {
+    display: flex;
+  }
+}

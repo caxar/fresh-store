@@ -9,7 +9,7 @@
   height: 100%;
   display: flex;
   justify-content: flex-end;
-  z-index: 40;
+  z-index: 80;
   .mobile-bg {
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -17,6 +17,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 70;
     transition: all 0.3s ease;
   }
   .mobile-content {
@@ -24,12 +25,12 @@
     height: 100%;
     background: #fff;
     position: relative;
-    z-index: 40;
     display: flex;
     padding: 20px 50px 30px 20px;
     flex-direction: column;
     transform: translateX(100%);
     animation: showMenuMobile 0.3s ease forwards;
+    z-index: 80;
     &.showmenu {
       transform: translateX(0%);
       animation: showMenuMobile 0.3s ease forwards;

@@ -80,7 +80,11 @@ const MobileMenu = ({ showMobileMenu, setShowMobileMenu }: PropsMenu) => {
         <div className="mobile-main">
           <ul className="mobile-nav">
             <li>
-              <Link to="/goods" className="mobile-nav__adv">
+              <Link
+                to="/goods"
+                className="mobile-nav__adv"
+                onClick={() => handleClickClose()}
+              >
                 <span>Каталог товаров</span>
                 <img src={AdvCatalogImage} alt="" />
               </Link>
