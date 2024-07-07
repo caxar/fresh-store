@@ -15,7 +15,7 @@
     // backdrop-filter: blur(20px);
     // box-shadow: rgba(6, 5, 50, 0.1) 0px 4px 30px;
     animation: stickyHeaderAnimation 0.3s ease forwards;
-    z-index: 20;
+    z-index: 70;
     .heading-wrapper {
       box-shadow: rgba(6, 5, 50, 0.1) 0px 4px 30px;
     }
@@ -186,6 +186,7 @@
 
 @include xl {
   .heading {
+    padding: 0;
     &-wrapper {
       &__main {
         width: 100%;
@@ -209,6 +210,12 @@
         width: 100%;
       }
     }
+  }
+}
+
+@include md {
+  .heading-wrapper {
+    padding: 15px;
   }
 }
 

@@ -26,7 +26,7 @@
     background: #fff;
     position: relative;
     display: flex;
-    padding: 20px 50px 30px 20px;
+    padding: 20px 20px 30px 20px;
     flex-direction: column;
     transform: translateX(100%);
     animation: showMenuMobile 0.3s ease forwards;
@@ -79,6 +79,18 @@
         }
       }
     }
+  }
+}
+
+@include lg {
+  .mobile-menu .mobile-content {
+    width: 50%;
+  }
+}
+
+@include md {
+  .mobile-menu .mobile-content {
+    width: 100%;
   }
 }
 

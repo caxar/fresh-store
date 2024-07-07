@@ -1,4 +1,5 @@
 @import "../../css-config/colors.scss";
+@import "../../css-config/mixins.scss";
 
 .cooperation {
   margin-bottom: 80px;
@@ -62,6 +63,56 @@
       -moz-border-radius: 20px;
       -ms-border-radius: 20px;
       -o-border-radius: 20px;
+    }
+  }
+}
+
+@include xl {
+  .cooperation {
+    &-wrapper {
+    }
+    &-right {
+      width: 20%;
+    }
+    &-left {
+      width: 20%;
+    }
+  }
+}
+
+@include lg {
+  .cooperation {
+    &-wrapper {
+      .title {
+        font-size: 25px;
+        line-height: 30px;
+      }
+    }
+    &-right {
+      width: 30%;
+    }
+    &-left {
+      width: 30%;
+    }
+  }
+}
+
+@include md {
+  .cooperation {
+    .food-nav {
+      display: none;
+    }
+    &-wrapper {
+      .year {
+        margin: 0;
+      }
+    }
+    &-right {
+      display: none;
+    }
+
+    &-left {
+      display: none;
     }
   }
 }

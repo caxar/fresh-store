@@ -13,7 +13,9 @@ import "swiper/css/navigation";
 import "./Popular.scss";
 
 const Popular = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const swiper = useSwiper();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const swiperSlide = useSwiperSlide();
   const swiperRef = React.useRef();
 

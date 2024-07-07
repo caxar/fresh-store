@@ -1,6 +1,8 @@
 @import "../../../css-config/colors.scss";
 
 .offer {
+  display: none;
+  height: 100px;
   &-nav {
     display: flex;
     align-items: center;

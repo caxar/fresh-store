@@ -1,4 +1,5 @@
 @import "../../css-config/colors.scss";
+@import "../../css-config/mixins.scss";
 
 .cat-item {
   // height: 600px;
@@ -122,5 +123,41 @@
   }
   .swiper-button-prev {
     left: 0;
+  }
+}
+
+@include lg {
+  .cat-item {
+    &__text {
+      gap: 10px;
+      .title {
+        line-height: 47px;
+      }
+    }
+    .swiper-backface-hidden .swiper-slide {
+      flex-shrink: 1;
+    }
+  }
+}
+
+@include md {
+  .cat-item {
+    &__text {
+      gap: 10px;
+      .title {
+        font-size: 35px;
+      }
+      .subtitle {
+        display: none;
+      }
+    }
+  }
+}
+
+@include sm {
+  .cat-item {
+    &__text {
+      flex-direction: column;
+    }
   }
 }

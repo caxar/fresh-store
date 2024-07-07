@@ -165,13 +165,16 @@
 }
 
 @include xl {
+  .slider {
+    height: 900px;
+  }
   .slider-wrapper {
     grid-template-columns: repeat(1, 1fr);
     &__info {
       padding: 30px;
     }
     &__sliders {
-      height: 50px;
+      height: 500px;
     }
   }
 }
@@ -185,6 +188,20 @@
       .main-button {
         width: 100%;
       }
+    }
+    .slider-over__content {
+      width: 97%;
+      right: 0;
+      left: 7px;
+    }
+  }
+}
+@include sm {
+  .slider {
+    // margin-bottom: 90px;
+    .slider-wrapper__sliders .swiper-pagination {
+      padding-left: 9px;
+      padding-bottom: 0px;
     }
   }
 }

@@ -1,4 +1,5 @@
 @import "../../css-config/colors.scss";
+@import "../../css-config/mixins.scss";
 
 .footer {
   margin-top: 200px;
@@ -9,8 +10,8 @@
     position: relative;
     padding: 80px 50px;
     background: $gray-3;
-    height: 300px;
     border-radius: 10px;
+    height: 350px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
@@ -54,6 +55,59 @@
         -moz-transform: scale(-1, 1);
         -ms-transform: scale(-1, 1);
         -o-transform: scale(-1, 1);
+      }
+    }
+  }
+}
+
+@include xl {
+  .footer {
+    margin-top: 0;
+    &-wrapper {
+      padding: 40px 20px;
+      &__right {
+        img {
+          width: 35%;
+          bottom: -40px;
+        }
+      }
+    }
+  }
+}
+@include md {
+  .footer {
+    margin-top: 0;
+    &-wrapper {
+      height: 100%;
+      &__right {
+        display: none;
+      }
+      &__left {
+        // flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
+        gap: 15px;
+      }
+    }
+  }
+}
+
+@include sm {
+  .footer {
+    &-wrapper {
+      &__left {
+        flex-direction: column;
+        gap: 30px;
+        .connect {
+          text-align: center;
+          width: 100%;
+          .logo {
+            font-size: 30px;
+          }
+          .main-button {
+            width: 100%;
+          }
+        }
       }
     }
   }

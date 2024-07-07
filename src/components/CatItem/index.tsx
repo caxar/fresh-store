@@ -33,6 +33,28 @@ const CatItem = () => {
             spaceBetween={30}
             grabCursor={true}
             className="mySwiper"
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                // spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 2,
+                // spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                // spaceBetween: 40,
+              },
+              1028: {
+                slidesPerView: 3,
+                // spaceBetween: 30,
+              },
+              1250: {
+                slidesPerView: 4,
+                // spaceBetween: 30,
+              },
+            }}
           >
             <SwiperSlide>
               <div className="cat-slide">
