@@ -4,6 +4,7 @@ import footerBg from "../../assets/footer-bg.png";
 
 import "./Footer.scss";
 import Button from "../Button";
+import Cookie from "../Cookie";
 
 const Footer = () => {
   return (
@@ -48,6 +49,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      {localStorage.getItem("cookie") === "true" ? "" : <Cookie />}
     </div>
   );
 };

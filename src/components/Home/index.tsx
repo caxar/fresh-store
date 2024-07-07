@@ -11,6 +11,7 @@ import Footer from "../Footer";
 import Offer from "../Footer/Offer";
 import ScrollBtn from "../ScrollBtn";
 import BottomNavigation from "../BottomNavigation";
+import Cookie from "../Cookie";
 
 const Home = () => {
   const [scrollingBtn, setScrollingBtn] = React.useState<boolean>(false);

@@ -1,0 +1,59 @@
+@import "../../css-config/colors.scss";
+@import "../../css-config/mixins.scss";
+
+.cookie {
+  position: fixed;
+  width: 350px;
+  height: 175px;
+  border-radius: 10px;
+  background: $white;
+  left: 70px;
+  bottom: 70px;
+  padding: 20px 50px;
+  z-index: 50;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  animation: cookieAnimation 0.3s ease;
+  -webkit-animation: cookieAnimation 0.7s ease;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  &-alert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    gap: 10px;
+    &__text {
+      color: $black;
+      font-size: 20px;
+      display: flex;
+      text-align: center;
+    }
+    &__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+      background: $green-3;
+      border-radius: 10px;
+      width: 150px;
+      padding: 10px;
+      cursor: pointer;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+  }
+}
+
+@keyframes cookieAnimation {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 70px;
+  }
+}

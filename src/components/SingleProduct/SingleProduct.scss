@@ -1,18 +1,18 @@
 @import "../../css-config/colors.scss";
+@import "../../css-config/mixins.scss";
 
 .single-product {
   &__wrapper {
     display: flex;
-    // gap: 40px;
+    gap: 40px;
     margin-bottom: 80px;
   }
   &__slider {
-    position: sticky;
-    position: -webkit-sticky; /* for Safari */
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
-    align-self: flex-start; /* <-- this is the fix */
-    width: 55%;
+    align-self: flex-start;
+    width: 50%;
   }
   &__text {
     margin-top: 40px;
@@ -37,12 +37,6 @@
       h3 {
         color: $black;
         margin-bottom: 10px;
-      }
-      &-first {
-      }
-      &-second {
-      }
-      &-third {
       }
     }
     .properties {
@@ -109,6 +103,21 @@
           }
         }
       }
+    }
+  }
+}
+
+@include lg {
+  .single-product {
+    &__wrapper {
+      flex-direction: column;
+    }
+    &__slider {
+      position: initial;
+      width: 100%;
+    }
+    &__text {
+      margin-top: 0;
     }
   }
 }

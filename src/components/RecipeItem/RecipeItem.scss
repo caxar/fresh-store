@@ -1,6 +1,8 @@
 @import "../../css-config/colors.scss";
+@import "../../css-config/mixins.scss";
 
 .recipe {
+  margin-bottom: 80px;
   &-wrapper {
   }
   &-text {
@@ -12,6 +14,7 @@
       font-size: 45px;
       color: #000;
       font-weight: 500;
+      line-height: 45px;
     }
   }
   &-slider {
@@ -89,5 +92,18 @@
     }
     .swiper {
     }
+  }
+}
+
+@include md {
+  .recipe-text {
+    .title {
+      font-size: 35px;
+    }
+  }
+}
+@include sm {
+  .recipe-text {
+    flex-direction: column;
   }
 }
