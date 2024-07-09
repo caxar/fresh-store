@@ -10,6 +10,7 @@ import { nanoid } from "nanoid";
 import ProductCategory from "../CatItem/ProductCategory";
 
 import "./CategoryProduct.scss";
+import SkeletonProductItem from "./SkeletonProductItem";
 
 const CategoryProduct = () => {
   const dispatch = useDispatch();
@@ -29,9 +30,15 @@ const CategoryProduct = () => {
     <div className="category-product">
       <div className="container">
         <div className="category-product__wrapper">
-          {entities?.data?.map((item) => (
-            <ProductCategory key={nanoid()} {...item} />
-          ))}
+          {status === "failed"
+            ? "ошибка загрузки товаров"
+            : status === "pending"
+            ? [...new Array(4)].map(() => (
+                <SkeletonProductItem key={nanoid()} />
+              ))
+            : entities?.data?.map((item) => (
+                <ProductCategory key={nanoid()} {...item} />
+              ))}
         </div>
       </div>
     </div>

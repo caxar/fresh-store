@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./ProductCategory.scss";
+import { Link } from "react-router-dom";
 
 type PropsProductData<T> = {
   attributes: T;
@@ -8,17 +9,19 @@ type PropsProductData<T> = {
 
 const ProductCategory = ({ attributes }: PropsProductData) => {
   //   console.log("dataProduct", dataProduct);
-  const { price, title, weight, image } = attributes;
+  const { price, title, weight, image, slug } = attributes;
   return (
     <div className="cat-slide">
-      <div className="cat-slide__top">
-        <img
-          src={`${
-            import.meta.env.VITE_LOCAL_API + image?.data[0]?.attributes?.url
-          }`}
-          alt="картинка"
-        />
-      </div>
+      <Link to={`/goods/${slug}`}>
+        <div className="cat-slide__top">
+          <img
+            src={`${
+              import.meta.env.VITE_LOCAL_API + image?.data[0]?.attributes?.url
+            }`}
+            alt="картинка"
+          />
+        </div>
+      </Link>
       <div className="cat-slide__bottom">
         <div className="rating">
           <div className="rating-star">
@@ -38,7 +41,10 @@ const ProductCategory = ({ attributes }: PropsProductData) => {
           </div>
           <span>{weight} г</span>
         </div>
-        <div className="title">{title}</div>
+        <Link to={`/goods/${slug}`}>
+          <div className="title">{title}</div>
+        </Link>
+
         <div className="price">
           <span>{price} ₽</span>
           <div className="price-btn">

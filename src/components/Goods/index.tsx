@@ -7,6 +7,7 @@ import { selectCategory } from "../../redux/category/selectors";
 
 import "./Goods.scss";
 import { nanoid } from "nanoid";
+import SkeletonGoods from "./SkeletonGoods";
 
 const Goods = () => {
   const { entities, status } = useSelector(selectCategory);
@@ -21,21 +22,25 @@ const Goods = () => {
     <div className="goods">
       <div className="container">
         <div className="goods-wrapper">
-          {entities?.data?.map((item) => (
-            <Link key={nanoid()} to={`/category/${item?.attributes?.slug}`}>
-              <div className="goods-card">
-                <img
-                  src={
-                    import.meta.env.VITE_LOCAL_API +
-                    item?.attributes?.image?.data[0]?.attributes?.url
-                  }
-                  // item.attributes.img.data.attributes.url
-                  alt={item?.attributes?.title}
-                />
-                <div className="title">{item?.attributes?.title}</div>
-              </div>
-            </Link>
-          ))}
+          {status === "failed"
+            ? "Ошибка товаров"
+            : status === "pending"
+            ? [...new Array(4)].map(() => <SkeletonGoods key={nanoid()} />)
+            : entities?.data?.map((item) => (
+                <Link key={nanoid()} to={`/category/${item?.attributes?.slug}`}>
+                  <div className="goods-card">
+                    <img
+                      src={
+                        import.meta.env.VITE_LOCAL_API +
+                        item?.attributes?.image?.data[0]?.attributes?.url
+                      }
+                      // item.attributes.img.data.attributes.url
+                      alt={item?.attributes?.title}
+                    />
+                    <div className="title">{item?.attributes?.title}</div>
+                  </div>
+                </Link>
+              ))}
         </div>
       </div>
     </div>
