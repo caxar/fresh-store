@@ -4,6 +4,7 @@ import cooperationLeft from "../../assets/cooperation-left.png";
 import cooperationRight from "../../assets/cooperation-right.png";
 
 import "./Cooperation.scss";
+import { nanoid } from "nanoid";
 
 const Cooperation = () => {
   const cloudWord = [
@@ -44,7 +45,11 @@ const Cooperation = () => {
           </div>
           <ul className="food-nav">
             {cloudWord?.map((item) => (
-              <li className="food-nav__item" style={{ background: item.bg }}>
+              <li
+                key={nanoid()}
+                className="food-nav__item"
+                style={{ background: item.bg }}
+              >
                 {item.title}
               </li>
             ))}

@@ -1,17 +1,14 @@
 import React from "react";
 import "./Home.scss";
-import Top from "../Top";
-import Heading from "../Heading";
+
 import Slider from "../Slider";
 import CatItem from "../CatItem";
 import Popular from "../Popular";
 import Values from "../Values";
 import Cooperation from "../Cooperation";
-import Footer from "../Footer";
-import Offer from "../Footer/Offer";
+
 import ScrollBtn from "../ScrollBtn";
 import BottomNavigation from "../BottomNavigation";
-import Cookie from "../Cookie";
 
 const Home = () => {
   const [scrollingBtn, setScrollingBtn] = React.useState<boolean>(false);

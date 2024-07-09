@@ -14,9 +14,9 @@ const BottomNavigation = () => {
             <g
               id="Page-1"
               stroke="none"
-              stroke-width="1"
+              strokeWidth="1"
               fill="none"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             >
               <g
                 id="Dribbble-Light-Preview"
@@ -43,14 +43,14 @@ const BottomNavigation = () => {
             id="Layer_1"
             viewBox="0 0 512 512"
             stroke="#707070"
-            stroke-width="10.751999999999999"
+            strokeWidth="10.751999999999999"
           >
-            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+            <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
             <g
               id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
 
             <g id="SVGRepo_iconCarrier">
@@ -113,9 +113,9 @@ const BottomNavigation = () => {
             <g
               id="页面-1"
               stroke="none"
-              stroke-width="1"
+              strokeWidth="1"
               fill="none"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             >
               <g id="Business" transform="translate(-480.000000, -144.000000)">
                 <g

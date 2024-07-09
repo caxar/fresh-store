@@ -1,4 +1,5 @@
 @import "../../css-config/colors.scss";
+@import "../../css-config/mixins.scss";
 
 .cart {
   &-wrapper {
@@ -13,11 +14,41 @@
       width: 450px;
       line-height: 45px;
       color: $black;
+      text-wrap: balance;
     }
   }
   &-info {
     display: flex;
     flex-direction: column;
     gap: 30px;
+  }
+}
+
+@include lg {
+  .cart {
+    margin-bottom: 80px;
+    &-wrapper {
+      flex-direction: column;
+      gap: 0;
+      &__img {
+        text-align: center;
+        img {
+          width: 80%;
+        }
+      }
+    }
+    &-info {
+      text-align: center;
+      align-items: center;
+    }
+  }
+}
+@include md {
+  .cart {
+    &-wrapper {
+      &__text {
+        font-size: 30px;
+      }
+    }
   }
 }

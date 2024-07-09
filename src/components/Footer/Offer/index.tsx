@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Offer.scss";
+import { nanoid } from "nanoid";
 
 const Offer = () => {
   const offerData = [
@@ -23,7 +24,7 @@ const Offer = () => {
         <div className="offer-wrrapper">
           <ul className="offer-nav">
             {offerData?.map((item) => (
-              <li className="offren-nav__item">
+              <li key={nanoid()} className="offren-nav__item">
                 <a href="">{item.title}</a>
               </li>
             ))}
