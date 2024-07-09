@@ -1,0 +1,117 @@
+@import "../../../css-config/colors.scss";
+@import "../../../css-config/mixins.scss";
+
+.cat-slide {
+  position: relative;
+  //   background: $gray-3;
+  width: 305px;
+  //   padding: 30px 15px 15px 15px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  // cursor: pointer;
+  &__top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 190px;
+    overflow: hidden;
+    // margin-bottom: 40px;
+    img {
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+      -webkit-transition: transform 0.3s ease-in-out;
+      -moz-transition: transform 0.3s ease-in-out;
+      -ms-transition: transform 0.3s ease-in-out;
+      -o-transition: transform 0.3s ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        cursor: pointer;
+      }
+    }
+  }
+  &__bottom {
+    background: $white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 15px 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    .rating {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &-star {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+    .title {
+      color: $black;
+      font-weight: 500;
+      font-size: 17px;
+      margin-bottom: 5px;
+      transition: color 0.2s ease;
+      -moz-transition: color 0.2s ease;
+      -ms-transition: color 0.2s ease;
+      -o-transition: color 0.2s ease;
+      -webkit-transition: color 0.2s ease;
+      &:hover {
+        color: $green-3;
+        cursor: pointer;
+      }
+    }
+    .price {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      span {
+        font-size: 30px;
+        font-weight: 500;
+        color: $black;
+      }
+      &-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: $white;
+        width: 50px;
+        height: 50px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        cursor: pointer;
+        &:hover {
+          svg {
+            transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -o-transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+  &__favorite {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    opacity: 1;
+  }
+}

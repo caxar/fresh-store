@@ -1,2 +1,9 @@
 @import "../../css-config/colors.scss";
 @import "../../css-config/mixins.scss";
+
+.category-product {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

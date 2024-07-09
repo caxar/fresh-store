@@ -1,30 +1,38 @@
 import React from "react";
 
-import "./CategoryProduct.scss";
 import { fetchDataFromApi } from "../../utils/Api";
 import { useParams } from "react-router";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchCategoryProducts } from "../../redux/categoryProducts/asyncAction";
+import { selectCategoryProducts } from "../../redux/categoryProducts/selectors";
+import CatItem from "../CatItem";
+import { nanoid } from "nanoid";
+import ProductCategory from "../CatItem/ProductCategory";
+
+import "./CategoryProduct.scss";
 
 const CategoryProduct = () => {
-  const { slug } = useParams();
-
   const dispatch = useDispatch();
 
+  // Получаем slug из url категории
+  const { slug } = useParams();
+
+  //    при изменении slug делаем запрос на получения данных
   React.useEffect(() => {
     dispatch(fetchCategoryProducts(slug));
   }, [slug]);
 
-  //   const res = fetchDataFromApi(
-  //     `/api/products?filters[categories][slug]=${slug}&populate=*`
-  //   );
-
-  //   console.log(res);
+  //   данные из redux status объекта и сами данные
+  const { entities, status } = useSelector(selectCategoryProducts);
 
   return (
     <div className="category-product">
       <div className="container">
-        <div className="category-product__wrapper"></div>
+        <div className="category-product__wrapper">
+          {entities?.data?.map((item) => (
+            <ProductCategory key={nanoid()} {...item} />
+          ))}
+        </div>
       </div>
     </div>
   );
