@@ -41,8 +41,9 @@ const dataMenu = [
 
 const MobileMenu = ({ showMobileMenu, setShowMobileMenu }: PropsMenu) => {
   // Зкрыть меню при клике вне элемента
-  const handleClickOut = (e) => {
-    if (e.target.classList.contains("mobile-bg")) {
+  const handleClickOut = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = e.target as Element;
+    if (el.classList.contains("mobile-bg")) {
       setShowMobileMenu(false);
     }
   };

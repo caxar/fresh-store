@@ -12,6 +12,7 @@ import ErrorSite from "./components/404";
 import Goods from "./components/Goods";
 import { store } from "./redux/store";
 import CategoryProduct from "./components/CategoryProduct";
+import Fav from "./components/Fav";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/goods/:slug" element={<SingleProduct />} />
           <Route path="/goods" element={<Goods />} />
           <Route path="/category/:slug" element={<CategoryProduct />} />
+          <Route path="/favorite" element={<Fav />} />
           <Route path="/*" element={<ErrorSite />} />
         </Routes>
         <Footer />

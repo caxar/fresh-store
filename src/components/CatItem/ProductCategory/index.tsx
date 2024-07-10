@@ -2,24 +2,31 @@ import React from "react";
 
 import "./ProductCategory.scss";
 import { Link } from "react-router-dom";
+import { FavItem } from "../../../redux/favorite/types";
 
-type PropsProductData<T> = {
-  attributes: T;
+type PropsProductData = {
+  attributes: any;
 };
 
 const ProductCategory = ({ attributes }: PropsProductData) => {
   //   console.log("dataProduct", dataProduct);
   const { price, title, weight, image, slug } = attributes;
+
   return (
     <div className="cat-slide">
       <Link to={`/goods/${slug}`}>
         <div className="cat-slide__top">
-          <img
-            src={`${
-              import.meta.env.VITE_LOCAL_API + image?.data[0]?.attributes?.url
-            }`}
-            alt="картинка"
-          />
+          {!image ? (
+            <img
+              src={`${
+                import.meta.env.VITE_LOCAL_API +
+                image?.data?.[0]?.attributes?.url
+              }`}
+              alt="картинка"
+            />
+          ) : (
+            <img src={`${attributes?.imageUrl}`} alt="" />
+          )}
         </div>
       </Link>
       <div className="cat-slide__bottom">

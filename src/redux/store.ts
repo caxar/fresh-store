@@ -3,12 +3,14 @@ import { useDispatch } from "react-redux";
 import CategoryReducer from "./category/categorySlice";
 import ProductsCategory from "./categoryProducts/categoryProductsSlice";
 import SingleProdcutReducer from "./singleProduct/singleProductSlice";
+import FavoriteReducer from "./favorite/favoriteSlice";
 
 export const store = configureStore({
   reducer: {
     category: CategoryReducer,
     productCategory: ProductsCategory,
     singleProduct: SingleProdcutReducer,
+    favorite: FavoriteReducer,
   },
 });
 
