@@ -3,16 +3,10 @@
 
 .cat-slide {
   position: relative;
-  //   background: $gray-3;
   width: 305px;
-  //   padding: 30px 15px 15px 15px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  // cursor: pointer;
   &__top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -30,6 +24,7 @@
       -moz-transition: transform 0.3s ease-in-out;
       -ms-transition: transform 0.3s ease-in-out;
       -o-transition: transform 0.3s ease-in-out;
+
       &:hover {
         transform: scale(1.1);
         -webkit-transform: scale(1.1);

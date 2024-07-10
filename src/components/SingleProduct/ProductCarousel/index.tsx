@@ -14,6 +14,7 @@ import "./ProductCarousel.scss";
 
 const ProductCarousel = ({ images }) => {
   const [thumbs, setThumbs] = React.useState(null);
+
   return (
     <div className="single-swiper">
       <Swiper
@@ -22,9 +23,12 @@ const ProductCarousel = ({ images }) => {
         thumbs={{ swiper: thumbs && !thumbs.destroyed ? thumbs : null }}
         navigation={false}
       >
-        {images.map((src) => (
+        {images?.map((src) => (
           <SwiperSlide key={nanoid()}>
-            <img src={src.url} alt="" />
+            <img
+              src={import.meta.env.VITE_LOCAL_API + src?.attributes?.url}
+              alt=""
+            />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -35,9 +39,9 @@ const ProductCarousel = ({ images }) => {
         onSwiper={setThumbs}
         className="single-swiper__thumb"
       >
-        {images.map((src) => (
+        {images?.map((src) => (
           <SwiperSlide key={nanoid()}>
-            <img src={src.url} />
+            <img src={import.meta.env.VITE_LOCAL_API + src?.attributes?.url} />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -85,11 +85,11 @@
           justify-content: space-between;
           width: 100%;
           &__left {
-            width: 45%;
+            width: 100%;
           }
-          &__right {
-            width: 45%;
-          }
+          // &__right {
+          //   width: 45%;
+          // }
         }
         &-item {
           display: flex;

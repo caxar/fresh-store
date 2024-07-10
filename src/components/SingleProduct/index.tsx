@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useDebugValue } from "react";
 
-import { useLocation } from "react-router";
+import { useLocation, useParams } from "react-router";
 
 import SingleBg from "../../assets/single-bg.png";
 
@@ -8,31 +8,54 @@ import "./SingleProduct.scss";
 import ProductCarousel from "./ProductCarousel";
 import CatItem from "../CatItem";
 import RecipeItem from "../RecipeItem";
+import { fetchDataFromApi } from "../../utils/Api";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchSingleProduct } from "../../redux/singleProduct/asyncActions";
+import { selectSingleProduct } from "../../redux/singleProduct/selectors";
+import { nanoid } from "nanoid";
 
 const SingleProduct = () => {
-  const location = useLocation();
+  const dispatch = useDispatch();
 
+  // получаем location для breadcrumbs
+  const location = useLocation();
   console.log(location.pathname);
 
-  const dataImg = [
-    {
-      url: SingleBg,
-      name: "тестовый",
-    },
-    {
-      url: SingleBg,
-      name: "тестовый2",
-    },
-  ];
+  // Получаем slug товара для запроса з=данных
+  const { slug } = useParams();
+
+  React.useEffect(() => {
+    dispatch(fetchSingleProduct(slug));
+  }, [slug]);
+
+  // поулчаем данные из redux
+  const { entities, status } = useSelector(selectSingleProduct);
+
+  // что бы не было ошибки 0 элементов проверяем есть ли что-то в items если нет возвращаем пустое значание
+  if (!entities) return <></>;
+
+  // const dataImg = [
+  //   {
+  //     url: SingleBg,
+  //     name: "тестовый",
+  //   },
+  //   {
+  //     url: SingleBg,
+  //     name: "тестовый2",
+  //   },
+  // ];
+
+  const singleData = entities?.data?.[0]?.attributes;
+
   return (
     <div className="single-product">
       <div className="container">
         <div className="single-product__wrapper">
           <div className="single-product__slider">
-            <ProductCarousel images={dataImg} />
+            <ProductCarousel images={singleData?.image?.data} />
           </div>
           <div className="single-product__text">
-            <div className="title">Персики сладкие</div>
+            <div className="title">{singleData?.title}</div>
             <div className="rating">
               <div className="rating-star">
                 <svg
@@ -49,13 +72,10 @@ const SingleProduct = () => {
                 </svg>
                 4.98
               </div>
-              <span>500 г</span>
+              <span>{singleData?.weight} г</span>
             </div>
             <div className="description">
-              <div className="description-first">
-                Погрузитесь в летнее волшебство со свежими, сладкими персиками.
-                Персик - это вкус солнечного дня и богатсва южных фруктов садов
-              </div>
+              <div className="description-first">{singleData?.description}</div>
               <div className="description-second">
                 <h3>Питательные свойства</h3>
                 <span>
@@ -75,52 +95,47 @@ const SingleProduct = () => {
             </div>
             <div className="properties">
               <div className="properties-btn">О товаре</div>
-
-              <div className="specifications">
-                <h3>Характеристики:</h3>
-                <ul className="specifications-nav">
-                  <li className="specifications-nav__item">
-                    <div className="item-title">Сорт:</div>
-                    <div className="item-value">Сладкий и сочный</div>
-                  </li>
-                  <li className="specifications-nav__item">
-                    <div className="item-title">Происхождение:</div>
-                    <div className="item-value">
-                      ООО Семейные фермы, Краснодарский край
-                    </div>
-                  </li>
-                  <li className="specifications-nav__item">
-                    <div className="item-title">Сезон:</div>
-                    <div className="item-value">Летний сезон</div>
-                  </li>
-                  <li className="specifications-nav__item">
-                    <div className="item-title">Вес плода:</div>
-                    <div className="item-value">150-180 грамм</div>
-                  </li>
-                </ul>
-              </div>
+              {!singleData?.specifications ? (
+                ""
+              ) : (
+                <div className="specifications">
+                  <h3>Характеристики:</h3>
+                  <ul className="specifications-nav">
+                    <li className="specifications-nav__item">
+                      <div className="item-title">Сорт:</div>
+                      <div className="item-value">Сладкий и сочный</div>
+                    </li>
+                    <li className="specifications-nav__item">
+                      <div className="item-title">Происхождение:</div>
+                      <div className="item-value">
+                        ООО Семейные фермы, Краснодарский край
+                      </div>
+                    </li>
+                    <li className="specifications-nav__item">
+                      <div className="item-title">Сезон:</div>
+                      <div className="item-value">Летний сезон</div>
+                    </li>
+                    <li className="specifications-nav__item">
+                      <div className="item-title">Вес плода:</div>
+                      <div className="item-value">150-180 грамм</div>
+                    </li>
+                  </ul>
+                </div>
+              )}
               <div className="nutritional">
                 <h3>Пищевая ценность на 100г:</h3>
                 <div className="nutritional-wrapper">
                   <ul className="nutritional-wrapper__left">
-                    <li className="nutritional-item">
-                      <div className="item-title">Калории:</div>
-                      <div className="item-value">39 ккал</div>
-                    </li>
-                    <li className="nutritional-item">
-                      <div className="item-title">Белки:</div>
-                      <div className="item-value">0.9 г</div>
-                    </li>
-                    <li className="nutritional-item">
-                      <div className="item-title">Жиры:</div>
-                      <div className="item-value">0.3 г</div>
-                    </li>
-                    <li className="nutritional-item">
-                      <div className="item-title">Углеводы:</div>
-                      <div className="item-value">9.5 г</div>
-                    </li>
+                    {singleData?.nutritional?.map((item) => (
+                      <li key={nanoid()} className="nutritional-item">
+                        <div className="item-title">{item?.title}:</div>
+                        <div className="item-value">
+                          {item?.value} {item?.sign}
+                        </div>
+                      </li>
+                    ))}
                   </ul>
-                  <ul className="nutritional-wrapper__right">
+                  {/* <ul className="nutritional-wrapper__right">
                     <li className="nutritional-item">
                       <div className="item-title">Пищевая ценность:</div>
                       <div className="item-value">39 ккал</div>
@@ -137,7 +152,7 @@ const SingleProduct = () => {
                       <div className="item-title">Калий:</div>
                       <div className="item-value">9.5 г</div>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
               <div className="recommendations">
