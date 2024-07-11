@@ -15,8 +15,12 @@ import { selectSingleProduct } from "../../redux/singleProduct/selectors";
 import { nanoid } from "nanoid";
 import { addFavorite } from "../../redux/favorite/favoriteSlice";
 import { FavItem } from "../../redux/favorite/types";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import BreadCrumbs from "../BreadCrumbs";
 
 const SingleProduct = () => {
+  const [isFavorite, setIsFavorite] = React.useState<boolean>(false);
   const dispatch = useDispatch();
 
   // получаем location для breadcrumbs
@@ -26,6 +30,7 @@ const SingleProduct = () => {
   // Получаем slug товара для запроса з=данных
   const { slug } = useParams();
 
+  // Меняем slug при изменении старницы товара для загрузки данных
   React.useEffect(() => {
     dispatch(fetchSingleProduct(slug));
   }, [slug]);
@@ -35,17 +40,6 @@ const SingleProduct = () => {
 
   // что бы не было ошибки 0 элементов проверяем есть ли что-то в items если нет возвращаем пустое значание
   if (!entities) return <></>;
-
-  // const dataImg = [
-  //   {
-  //     url: SingleBg,
-  //     name: "тестовый",
-  //   },
-  //   {
-  //     url: SingleBg,
-  //     name: "тестовый2",
-  //   },
-  // ];
 
   const singleData = entities?.data?.[0]?.attributes;
 
@@ -65,10 +59,25 @@ const SingleProduct = () => {
       },
     };
     dispatch(addFavorite(item));
+    notify();
   };
+
+  const notify = () =>
+    toast.success("Добавленно в избранное", {
+      position: "bottom-right",
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
 
   return (
     <div className="single-product">
+      <BreadCrumbs />
       <div className="container">
         <div className="single-product__wrapper">
           <div className="single-product__slider">
@@ -212,6 +221,7 @@ const SingleProduct = () => {
         <CatItem />
 
         <RecipeItem />
+        <ToastContainer />
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import { selectCategory } from "../../redux/category/selectors";
 import "./Goods.scss";
 import { nanoid } from "nanoid";
 import SkeletonGoods from "./SkeletonGoods";
+import BreadCrumbs from "../BreadCrumbs";
 
 const Goods = () => {
   const { entities, status } = useSelector(selectCategory);
@@ -21,6 +22,7 @@ const Goods = () => {
   return (
     <div className="goods">
       <div className="container">
+        <BreadCrumbs />
         <div className="goods-wrapper">
           {status === "failed"
             ? "Ошибка товаров"

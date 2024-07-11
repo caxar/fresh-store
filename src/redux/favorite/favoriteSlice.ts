@@ -34,22 +34,19 @@ export const favoriteSlice = createSlice({
         return current.price * current.quantity + sum;
       }, 0);
     },
-    countItemDown: (state, action: PayloadAction<string | number>) => {
-      const findItem = state.items.find((item) => item.id === action.payload);
-      if (findItem) {
-        findItem.count--;
-      }
+
+    removeFavorite: (state, action: PayloadAction<string | number>) => {
+      state.items = state.items.filter(
+        (item) => item.attributes.slug !== action.payload
+      );
     },
-    removeProduct: (state, action: PayloadAction<string | number>) => {
-      state.items = state.items.filter((item) => item.id !== action.payload);
-    },
-    clearProductItems: (state) => {
+    clearFavorite: (state) => {
       state.items = [];
     },
   },
 });
 
-export const { addFavorite, removeProduct, countItemDown, clearProductItems } =
+export const { addFavorite, removeFavorite, clearFavorite } =
   favoriteSlice.actions;
 
 export default favoriteSlice.reducer;

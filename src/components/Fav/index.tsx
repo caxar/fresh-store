@@ -6,12 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectFavorite } from "../../redux/favorite/selectors";
 import ProductCategory from "../CatItem/ProductCategory";
 import { nanoid } from "nanoid";
+import FavItem from "./FavItem";
 
 const Fav = () => {
   // данные из redux
   const { items } = useSelector(selectFavorite);
 
-  console.log(items);
   return (
     <div className="fav">
       <div className="container">
@@ -28,7 +28,7 @@ const Fav = () => {
           {items.length > 0 && (
             <div className="fav-content">
               {items.map((dataItem) => (
-                <ProductCategory key={nanoid()} {...dataItem} />
+                <FavItem key={nanoid()} {...dataItem} />
               ))}
             </div>
           )}

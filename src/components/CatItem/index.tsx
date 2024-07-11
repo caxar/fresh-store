@@ -13,7 +13,6 @@ import "./CatItem.scss";
 
 // import required modules
 import { Navigation } from "swiper/modules";
-import ProductCategory from "./ProductCategory";
 
 const CatItem = () => {
   return (

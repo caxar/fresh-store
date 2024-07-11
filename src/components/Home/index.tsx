@@ -9,6 +9,8 @@ import Cooperation from "../Cooperation";
 
 import ScrollBtn from "../ScrollBtn";
 import BottomNavigation from "../BottomNavigation";
+import { useSelector } from "react-redux";
+import { selectFavorite } from "../../redux/favorite/selectors";
 
 const Home = () => {
   const [scrollingBtn, setScrollingBtn] = React.useState<boolean>(false);
@@ -25,7 +27,6 @@ const Home = () => {
   React.useEffect(() => {
     window.addEventListener("scroll", handleScrollingBtn);
   }, []);
-
   return (
     <div className="home">
       {/* <Top />

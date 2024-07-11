@@ -2,11 +2,12 @@
 @import "../../css-config/mixins.scss";
 
 .heading {
-  position: relative;
+  position: fixed;
   padding: 17px 30px;
   margin-bottom: 30px;
   width: 100%;
   transition: all 0.3s ease;
+  z-index: 70;
   &.scrolling {
     position: fixed;
     top: 0;

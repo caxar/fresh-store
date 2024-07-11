@@ -1,16 +1,15 @@
 import React from "react";
 
-import { fetchDataFromApi } from "../../utils/Api";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategoryProducts } from "../../redux/categoryProducts/asyncAction";
 import { selectCategoryProducts } from "../../redux/categoryProducts/selectors";
-import CatItem from "../CatItem";
 import { nanoid } from "nanoid";
 import ProductCategory from "../CatItem/ProductCategory";
 
 import "./CategoryProduct.scss";
 import SkeletonProductItem from "./SkeletonProductItem";
+import BreadCrumbs from "../BreadCrumbs";
 
 const CategoryProduct = () => {
   const dispatch = useDispatch();

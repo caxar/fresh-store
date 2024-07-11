@@ -4,8 +4,13 @@ import Search from "../Search";
 import Menu from "./Menu";
 import { Link } from "react-router-dom";
 import MobileMenu from "./MobileMenu";
+import { useSelector } from "react-redux";
+import { selectFavorite } from "../../redux/favorite/selectors";
 
 const Heading = () => {
+  const { items } = useSelector(selectFavorite);
+  const ref = React.useRef(false);
+
   const [showMenu, setShowMenu] = React.useState<boolean>(false);
   const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
   const [scrollHeading, setScrollHeading] = React.useState<boolean>(false);
@@ -21,7 +26,7 @@ const Heading = () => {
 
   const handleScrollHeading = () => {
     const offsetTop = window.scrollY;
-    if (offsetTop > 300) {
+    if (offsetTop > 0) {
       setScrollHeading(true);
     } else {
       setScrollHeading(false);
@@ -31,6 +36,16 @@ const Heading = () => {
   React.useEffect(() => {
     window.addEventListener("scroll", handleScrollHeading);
   }, []);
+
+  // Добавления данных из избранного redux в localstorage
+  React.useEffect(() => {
+    if (ref.current) {
+      const dataLocalStorage = JSON.stringify(items);
+      localStorage.setItem("favItem", dataLocalStorage);
+    }
+    ref.current = true;
+  }, [items]);
+
   return (
     <>
       <div className={`heading ${scrollHeading ? "scrolling" : ""}`}>

@@ -1,30 +1,25 @@
 import React from "react";
-
-import "./ProductCategory.scss";
-import { Link } from "react-router-dom";
-import { FavItem } from "../../../redux/favorite/types";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { removeFavorite } from "../../../redux/favorite/favoriteSlice";
 
-type PropsProductData = {
-  attributes: any;
-};
+import "./FavItem.scss";
 
-const ProductCategory = ({ attributes }: PropsProductData) => {
+const FavItem = ({ attributes }: any) => {
+  const { price, title, weight, imageUrl, slug } = attributes;
+
   const dispatch = useDispatch();
 
-  const { price, title, weight, image, slug } = attributes;
+  //   Удлаить из избранного
+  const removeFromFavorite = (slugUrl: string) => {
+    dispatch(removeFavorite(slugUrl));
+  };
 
   return (
     <div className="cat-slide">
       <Link to={`/goods/${slug}`}>
         <div className="cat-slide__top">
-          <img
-            src={`${
-              import.meta.env.VITE_LOCAL_API + image?.data?.[0]?.attributes?.url
-            }`}
-            alt="картинка"
-          />
+          <img src={`${imageUrl}`} alt="картинка" />
         </div>
       </Link>
       <div className="cat-slide__bottom">
@@ -86,7 +81,10 @@ const ProductCategory = ({ attributes }: PropsProductData) => {
           </div>
         </div>
       </div>
-      <div className="cat-slide__favorite">
+      <div
+        className="cat-slide__favorite"
+        onClick={() => removeFromFavorite(slug)}
+      >
         <svg
           width="30px"
           height="30px"
@@ -96,7 +94,7 @@ const ProductCategory = ({ attributes }: PropsProductData) => {
         >
           <path
             d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z"
-            stroke="#179c49"
+            fill="#179c49"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -107,4 +105,4 @@ const ProductCategory = ({ attributes }: PropsProductData) => {
   );
 };
 
-export default ProductCategory;
+export default FavItem;
