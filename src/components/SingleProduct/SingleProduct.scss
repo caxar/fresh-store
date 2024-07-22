@@ -2,6 +2,7 @@
 @import "../../css-config/mixins.scss";
 
 .single-product {
+  margin-top: 140px;
   &__wrapper {
     display: flex;
     gap: 40px;
@@ -37,6 +38,10 @@
         -ms-transition: transform 0.3s ease;
         -o-transition: transform 0.3s ease;
       }
+      &:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
       &:hover {
         svg {
           transform: scale(1.1);
@@ -44,6 +49,34 @@
           -moz-transform: scale(1.1);
           -ms-transform: scale(1.1);
           -o-transform: scale(1.1);
+        }
+      }
+      .tooltiptext {
+        width: 120px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -60px;
+
+        /* Исчезают в подсказке */
+        opacity: 0;
+        transition: opacity 0.3s;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: #555 transparent transparent transparent;
         }
       }
     }

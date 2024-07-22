@@ -85,6 +85,7 @@ const FavItem = ({ attributes }: any) => {
         className="cat-slide__favorite"
         onClick={() => removeFromFavorite(slug)}
       >
+        <span className="tooltiptext">Удалить</span>
         <svg
           width="30px"
           height="30px"

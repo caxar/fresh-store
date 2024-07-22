@@ -86,6 +86,7 @@ const SingleProduct = () => {
               onClick={() => addToFavorite()}
               className="single-product__fav"
             >
+              <span className="tooltiptext">В избранное</span>
               <svg
                 width="23px"
                 height="23px"

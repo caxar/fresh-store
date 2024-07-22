@@ -2,6 +2,7 @@
 @import "../../css-config/mixins.scss";
 
 .goods {
+  margin-top: 80px;
   &-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

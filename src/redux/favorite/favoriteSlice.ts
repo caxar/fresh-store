@@ -16,11 +16,11 @@ export const favoriteSlice = createSlice({
     // иначе другой продукт тогда в count +1
     addFavorite: (state, action: PayloadAction<FavItem>) => {
       const findItem = state.items.find(
-        (item) => item.id === action.payload.id
+        (item) => item.attributes.id === action.payload.attributes.id
       );
 
       if (findItem) {
-        findItem.count++;
+        findItem.attributes.count++;
       } else {
         state.items.push({
           ...action.payload,

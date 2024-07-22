@@ -4,7 +4,10 @@ import "./ProductCategory.scss";
 import { Link } from "react-router-dom";
 import { FavItem } from "../../../redux/favorite/types";
 import { useDispatch } from "react-redux";
-import { removeFavorite } from "../../../redux/favorite/favoriteSlice";
+import {
+  addFavorite,
+  removeFavorite,
+} from "../../../redux/favorite/favoriteSlice";
 
 type PropsProductData = {
   attributes: any;
@@ -14,6 +17,38 @@ const ProductCategory = ({ attributes }: PropsProductData) => {
   const dispatch = useDispatch();
 
   const { price, title, weight, image, slug } = attributes;
+
+  console.log("test", attributes);
+
+  const addToFavorite = () => {
+    // ограничения на добавления с помощью типизации FavItem из FavoriteSlice
+    const item: FavItem = {
+      attributes: {
+        id: slug,
+        title: title,
+        imageUrl:
+          import.meta.env.VITE_LOCAL_API + image?.data[0]?.attributes?.url,
+        price: price,
+        weight: weight,
+        slug: slug,
+      },
+    };
+    dispatch(addFavorite(item));
+    notify();
+  };
+
+  const notify = () =>
+    toast.success("Добавленно в избранное", {
+      position: "bottom-right",
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
 
   return (
     <div className="cat-slide">
@@ -86,7 +121,8 @@ const ProductCategory = ({ attributes }: PropsProductData) => {
           </div>
         </div>
       </div>
-      <div className="cat-slide__favorite">
+      <div className="cat-slide__favorite" onClick={() => addToFavorite()}>
+        <span className="tooltiptext">В избранное</span>
         <svg
           width="30px"
           height="30px"
