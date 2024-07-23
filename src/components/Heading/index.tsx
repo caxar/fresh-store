@@ -4,11 +4,17 @@ import Search from "../Search";
 import Menu from "./Menu";
 import { Link } from "react-router-dom";
 import MobileMenu from "./MobileMenu";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectFavorite } from "../../redux/favorite/selectors";
+import { fetchDataFromApi } from "../../utils/Api";
+import { fetchCategory } from "../../redux/category/asyncActions";
+import { selectCategory } from "../../redux/category/selectors";
 
 const Heading = () => {
+  const dispatch = useDispatch();
+
   const { items } = useSelector(selectFavorite);
+  const { entities } = useSelector(selectCategory);
   const ref = React.useRef(false);
 
   const [showMenu, setShowMenu] = React.useState<boolean>(false);
@@ -45,6 +51,11 @@ const Heading = () => {
     }
     ref.current = true;
   }, [items]);
+
+  // загрузка названий категорий
+  React.useEffect(() => {
+    dispatch(fetchCategory());
+  }, []);
 
   return (
     <>
@@ -182,7 +193,7 @@ const Heading = () => {
             </div>
           </div>
           <div className="menu-block">
-            {showMenu && <Menu showMenu={showMenu} />}
+            {showMenu && <Menu showMenu={showMenu} items={entities} />}
           </div>
         </div>
       </div>
